@@ -706,3 +706,729 @@
   706  gh auth login
   707  cd
   708  history > ~/Desktop/Internship/linux/notes/terminal-history.txt
+    1  sudo apt update
+    2  apt list --upgradable
+    3  sudo apt update
+    4  sudo apt install python3 python3-pip -y
+    5  python3 --version
+    6  pip3 --version
+    7  sudo apt install python-is-python3
+    8  python --verson
+    9  python --version
+   10  sudo apt install python3-venv python3-dev
+   11  sudo apt install notebook
+   12  sudo apt update && sudo apt updgrade -y
+   13  sudo apt install -y nodejs npm
+   14  node -v
+   15  npm -v
+   16  sudo apt install -y postgresql-contrib
+   17  sudo systemctl start postgresql
+   18  sudo systemctl enable postgresql
+   19  sudo -u postgres psql
+   20  sudo apt update
+   21  sudo apt install -y git
+   22  git --version
+   23  sudo apt install -g expo-cli
+   24  sudo apt update
+   25  sudo npm install -g expo-cli
+   26  mkdir herhealth-backend
+   27  cd herhealth-backend
+   28  npm init -y
+   29  node -e "console.log(Node is working)"
+   30  Is
+   31  passwd
+   32  Is
+   33  sudo apt remove --purge code -y
+   34  which code
+   35  sudo snap remove code
+   36  sudo apt remove code
+   37  sudo apt purge code
+   38  rm -rf -/.config/code
+   39  [200~sudo apt remove code
+   40  sudo apt remove code
+   41  code
+   42  wget -0 vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
+   43  wget -O vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
+   44  [200~sudo apt install ./vscode.deb -y~
+   45  sudo apt install ./vscode.deb -y
+   46  which code
+   47  code
+   48  is /usr/share/code
+   49  Is /usr/share/code
+   50  ls /usrl/share/code
+   51  ls /usr/bin/code
+   52  sudo apt remove --purge code -y
+   53  wget -O vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
+   54  sudo apt install ./vscode.deb -y
+   55  code
+   56  /usr/share/code/bin/code
+   57  sudo ln -s /usr/share/code/bin/code /usr/bin/code
+   58  code
+   59  sudo apt remove --purge code -y
+   60  sudo rm -f vscode.deb
+   61  wget https://go.microsoft.com/fwlink/?LinkID=760868 -O code.deb
+   62  sudo dpkg -i code.deb
+   63  sudo apt -f install -y
+   64  ls /usr/share/code
+   65  code
+   66  sudo ln -s /usr/share/code/bin/code /usr/bin/code
+   67  sudo apt remove --purge code -y
+   68  sudo apt autoremove -y
+   69  sudo snap remove code 2>/dev/null
+   70  rm -rf ~/.vscode
+   71  rm -rf ~/.config/Code
+   72  rm -rf ~/.cache/Code
+   73  rm -rf ~/.config/code
+   74  sudo rm -f /usr/bin/code
+   75  sudo rm -f /usr/local/bin/code
+   76  which code
+   77  code
+   78  wget -O vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
+   79  sudo apt install ./vscode.deb -y
+   80  Is -a
+   81  Is 
+   82  ls
+   83  ls.ls
+   84  ls
+   85  \q
+   86  /q
+   87  exit
+   88  sudo apt update
+   89  sudo apt install build-essential python3 python3-pip git curl -y
+   90  pip3 --version
+   91  pip3 install numpy pandas flask requests
+   92  git config --global user.name "99Jeferson"
+   93  git config --global user.email "jefersonodong1@gmail.com"
+   94  git --version
+   95  nano test.cpp
+   96  python3 --version
+   97  /home/jeferson-clintono-odong/Documents/j
+   98  sudo apt update && sudo apt upgrade -y
+   99  sudo apt install -y nodejs npm
+  100  node -v
+  101  npm -v
+  102  sudo apt install -y postgresql postgresql-contrib
+  103  sudo systemctl start postgresql
+  104  sudo -u postgres psql
+  105  sudo apt install -y git
+  106  git --version
+  107  sudo npm install -g expo-cli
+  108  ls
+  109  ls -a -l
+  110  ls -l
+  111  ls -al
+  112  --help
+  113  -help
+  114  dhelp
+  115  deb dhelp
+  116  -h
+  117  it
+  118  -it
+  119  -l
+  120  --format=long
+  121  .config,.config
+  122  .config, .config
+  123  .csh 
+  124  .csh csh shell script
+  125  .csh csh shell script.
+  126  ls [-l
+  127  ls [-l, --format=long] [-a, --all] <file> <file> ...
+  128  ls -al
+  129  sudo apt update
+  130  sudo apt install nodejs npm
+  131  sudo apt install curl
+  132  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  133  sudo apt update 
+  134  sudo apt install docker.io
+  135  sudo systemctl start docker
+  136  sudo systemctl enable docker
+  137  sudo usermod -aG docker $USER
+  138  sudo snap install postman
+  139  sudo apt install mysql-server
+  140  sudo mysql_secure_installation
+  141  sudo apt update
+  142  vim app.py
+  143  sudo apt install vim
+  144  sudo apt update 
+  145  vim app.py
+  146  touch jeff.txt
+  147  touch app.py
+  148  nano app.py
+  149  vim app.py
+  150  echo "print("Hello World")"> app.py
+  151  mbadblocks
+  152  mcat
+  153  sudo install mtools
+  154  install --help
+  155  --backup
+  156  --backup[=<CONTROL>]
+  157  -P
+  158  --preverve-context
+  159  sudo apt --preverve-context
+  160  --help
+  161  echo $PATH
+  162  PATH="$PATH:/opt/gnome/bin"
+  163  export PATH
+  164  export PATH="$PATH:/opt/gnome/bin"
+  165  which ls
+  166  which cp mv rm
+  167  which cranzgots
+  168  touch -- -stupid_file_name
+  169  rm -- -stupid_file_name
+  170  cd desktop
+  171  cd ~/Desktop
+  172  _s-Stars
+  173  cd ~/Desktop
+  174  cd Rolling_Stars
+  175  code
+  176  npm install
+  177  npm start
+  178  vi app.py
+  179  vim app.py
+  180  vi app.py
+  181  pwd
+  182  cd /
+  183  pwd
+  184  ls
+  185  -$
+  186  ls Downloads/
+  187  ls downloads/
+  188  ls Documents/
+  189  cd /
+  190  ls Documents/
+  191  cd ~
+  192  pwd
+  193  ls
+  194  ls Downloads/
+  195  ls Documents/
+  196  ls /
+  197  pwd
+  198  ls ~
+  199  clear
+  200  ls
+  201  ls ~
+  202  ls ..
+  203  ls ../..
+  204  clear
+  205  ls -l
+  206  ls -a
+  207  ls -al
+  208  clea
+  209  clear
+  210  ls -lS
+  211  ls Documents/
+  212  ls Documents/*.j.py
+  213  pwd
+  214  ls 
+  215  clear
+  216  ls 
+  217  cd /
+  218  pwd
+  219  ls -ls>out.txt
+  220  ls -d 
+  221  ls -d */
+  222  man ls
+  223  cd 
+  224  cd /
+  225  pwd
+  226  cd ~
+  227  pwd
+  228  cd ..
+  229  pwd
+  230  ls 
+  231  cd ~
+  232  ls
+  233  cd documents
+  234  cd Documents
+  235  cd /home/jeferson-clintono-odong@Jeff/Documents/
+  236  cd Documents
+  237  ls
+  238  cd Downlaods/
+  239  clear 
+  240  cd Documents/
+  241  ls
+  242  Documents/Books/
+  243  cd ..
+  244  cd Documents/Books/
+  245  ls
+  246  clear 
+  247  cd 
+  248  cd /
+  249  cd /user/bin
+  250  cd /user/bin/
+  251  cd /usr/bin/
+  252  ls
+  253  clear
+  254  cd 
+  255  cd Documents/Books/
+  256  ls
+  257  npm start
+  258  sudo -s
+  259  cd
+  260  which bash
+  261  cd
+  262  cat
+  263  ls
+  264  cat 'print("Hello, Python")'
+  265  clear
+  266  cat -n
+  267  cat -E
+  268  man cat
+  269  -A
+  270  cat -A
+  271  cat >test.text
+  272  cat test.text
+  273  cat> test.text
+  274  cat test.text
+  275  cat>> test.text
+  276  cat test.text
+  277  clear
+  278  cat list 1.text
+  279  cd Desktop/
+  280  mkdir image
+  281  mkdir image/pics
+  282  mkdir names/mark
+  283  mkdir -p names/mark
+  284  mkdir -p names/{JOhn,Bob,Joa,Opio}
+  285  clear
+  286  cd
+  287  cd Desktop/
+  288  mkdir abc 
+  289  rmdir abc
+  290  rmdir names 
+  291  rmdir names/mark
+  292  rmdir names/opio
+  293  rmdir names/Opio
+  294  cd ..
+  295  mkdir -p a/b/c/d/e
+  296  ls -R
+  297  cd Desktop 
+  298  mkdir -p a/b/c/d/e
+  299  ls -R
+  300  cd a/b/
+  301  cat >abc.txt 
+  302  ls -R
+  303  cd ..
+  304  cd..
+  305  cd ..
+  306  ls -R
+  307  rmdir -pv a/b/c.d.e
+  308  ls -R
+  309  rmdir -pv a/b/c/d/e
+  310  ls -R
+  311  rm -r a/b/
+  312  rm -r a
+  313  cd
+  314  cd Desktop
+  315  mkdir file1.txt
+  316  cd file1.txt file2.txt
+  317  cat file1.txt
+  318  cat file11.tx
+  319  rmdirk file1.txt
+  320  rmdir file1.txt
+  321  rmdir names/Bob/Joa/John
+  322  rmdir names/{Bob,Joa,John}
+  323  rmdir names/Bob/
+  324  rmdir names/JOhn/
+  325  rmdir names/
+  326  claer
+  327  clear
+  328  ls
+  329  mkdir file1.txt
+  330  mv file1.txt file2.txt
+  331  cat
+  332  mv file2.txt file3.txt
+  333  cat file3.txt
+  334  mv file3.txt dir1/
+  335  ls dir1/
+  336  cat >file3.txt
+  337  mv file file3.txt dir1/
+  338  cat >file3.txt
+  339  mv file3.txt
+  340  mv -i file3.txt dir
+  341  mv -i file3.txt dir1
+  342  clear 
+  343  mkdir dir2
+  344  mv dir1 dir2
+  345  ls dir2/
+  346  ls dirr2/dir1/
+  347  cd >dir1 
+  348  cd Desktop
+  349  cat dir1
+  350  cat >dir1
+  351  ls dir1
+  352  ls dir2/dir1/ 
+  353  rmdir dir
+  354  rmdir dir/
+  355  rm dir/
+  356  rm dir
+  357  rm dir1
+  358  mv dir2 dir3
+  359  mv -v file3.txt dir3
+  360  cact 
+  361  cat Rolling_Stars
+  362  cd Rllong_Stars
+  363  cd Rollong_Stars
+  364  cd dir
+  365  cd dir3
+  366  ls dir3
+  367  ls -l
+  368  touch file1
+  369  ls -l
+  370  man nano
+  371  cd ..
+  372  nano file.txt
+  373  nano abc.cpp
+  374  sudo apt update
+  375  cd
+  376  ls /
+  377  cd /etc/
+  378  mkdir newdir
+  379  sudo mkdir newdir
+  380  sudo apt mkdir newdir
+  381  sudo mkdir newdir
+  382  ls /
+  383  ls
+  384  apt -get install gcc
+  385  apt -get install g++
+  386  sudo apt -get install g++
+  387  cd
+  388  top
+  389  ps -ux
+  390  ps -C gnome-terminal
+  391  echo Hello World 
+  392  echo "Hellow World"
+  393  myvar="Maria"
+  394  echo myvar
+  395  echo $myvar
+  396  x=10
+  397  echo "the value of x is $x"
+  398  echo -e 'some \text'
+  399  cd Desktop
+  400  ls -l
+  401  chmod o+x file
+  402  chmod u+rw,g=rw,o+r file
+  403  mkdir file
+  404  chmod u+rw,g=rw,o+r file
+  405  ls -l
+  406  chmod o+x file
+  407  ls -l
+  408  cd
+  409  cd Desktop
+  410  ls -ld dir3
+  411  chmod u-w dir3
+  412  ls -ld dir3
+  413  ls dir3/
+  414  cd dir3
+  415  touch file4
+  416  cd ..
+  417  u+w dir3
+  418  chmod u+w dir3
+  419  chmod u-r dir3
+  420  ls -l
+  421  cd dir3
+  422  ls
+  423  cd ..
+  424  chmod u+r dir3
+  425  ls -l dir3/
+  426  chmod u-x dir3
+  427  ls -ld dir3
+  428  cd dir3/
+  429  ls dir3/
+  430  ls -l dir3
+  431  touch file.txt
+  432  ls -l file.txt
+  433  chmod 000 file.txt
+  434  ls -l file.txt
+  435  chmod 755 file.txt
+  436  ls -l file.txt
+  437  nano myscript.sh
+  438  ./myscript.sh
+  439  chmod +x myscript.sh
+  440  ./myscript.sh
+  441  nano myscript.sh
+  442  ./myscript.sh
+  443  nano myscript.sh
+  444  ./myscript.sh
+  445  which ls
+  446  which bash
+  447  nano myscipt.sh
+  448  which cat
+  449  clear 
+  450  man ls
+  451  whatis ls
+  452  whatis firefox
+  453  cd
+  454  sudo useradd mark -m -s /bin/bash -g users -c "my comment" 
+  455  ls /home/
+  456  sudo passwd mark
+  457  ls /home/
+  458  sudo userdel mark
+  459  ls /home/
+  460  sudo userdel -r mark
+  461  ls /home/
+  462  sudo rm -r /home/mark/
+  463  ls /home
+  464  hostory
+  465  cat ~/.bash_history
+  466  sudo update
+  467  sudo apt update
+  468  sudo  apt install libreoffice okular
+  469  sudo apt update
+  470  sudo apt install ttf-mscorefonts-installer
+  471  fc-cache -f -v
+  472  fc-list | grep "Arial"
+  473  sudo apt update
+  474  npm start
+  475  groups 
+  476  cat /etc/group
+  477  sudo groupadd Java
+  478  cat /etc/group
+  479  sudo groupadd Cpp
+  480  sudo groupadd Python
+  481  cat /etc/group
+  482  sudo groupdel Cpp
+  483  cat /etc/group
+  484  sudo groupdel Python
+  485  sudo gpasswd -a jeferson-clintono-odong@Jeff gamemode
+  486  pwd
+  487  ls -a 
+  488  nano .bashrc
+  489  gedit .bashrc
+  490  sudo apt install gedit
+  491  sudo apt update
+  492  df
+  493  df -h
+  494  ls 
+  495  cd downloads 
+  496  cd downloads/
+  497  cd Downloads/
+  498  du
+  499  du -h
+  500  cd ..
+  501  du -sh
+  502  sudo du -sh
+  503  free 
+  504  free free -m
+  505  free free -g
+  506  clear 
+  507  df 
+  508  df -h
+  509  du -sh
+  510  du -sh/etc/
+  511  free -m
+  512  watch free -m
+  513  watch -n 1 free -m
+  514  df
+  515  cd /var/log
+  516  ls
+  517  head dmesg
+  518  tail dmesg
+  519  clear
+  520  tail -n3 dmesg
+  521  clear 
+  522  tail -f dmesg
+  523  pwd 
+  524  cd
+  525  pwd 
+  526  ls
+  527  find /home/jeferson-clintono-odong -name Jeff.sh
+  528  find /home/jeferson-clintono-odong -name sh
+  529  find /home/jeferson-clintono-odong 
+  530  help
+  531  cd
+  532  cd Desktop
+  533  Desktop wc file.txt
+  534  cd 
+  535  date
+  536  ls ; pwd 
+  537  date ; cal ; pwd
+  538  sudo apt update
+  539  sudo apt install ncal
+  540  date ; cal ; pwd
+  541  CAL 
+  542  date ; CAL ; pwd
+  543  CLEAR 
+  544  clear 
+  545  ls && pwd && date && cal
+  546  date
+  547  cal ; date
+  548  date && CAL
+  549  date && cal
+  550  ; CAL ; date
+  551  ; CAL && date 
+  552  pwd && DATE && cal
+  553  clear 
+  554  ls || pwd 
+  555  LS || pwd 
+  556  A || B
+  557  ifconfig
+  558  sudo apt update
+  559  sudo apt install net-tools
+  560  ifconfig
+  561  ifconfig eth0
+  562  ifconfig docker0
+  563  clear 
+  564  cd Desktop
+  565  tar -cvf file.txt.tar file.txt
+  566  tar -xvf file.txt.tar
+  567  netstat -a
+  568  netstat -a | less
+  569  netstat -at | less
+  570  netstat -l | less
+  571  netstat -lt | less
+  572  netstat -lu | less
+  573  netstat -s | less
+  574  netstat -p | less
+  575  netstat -pt | less
+  576  netstat -c
+  577  netstat -g
+  578  netstat -ie
+  579  grep
+  580  netstat -an | grep ':80'
+  581  ssh
+  582  cd
+  583  ssh
+  584  ssh localhost
+  585  sudo apt update 
+  586  sudo apt -get install openssh-server
+  587  sudo apt  install openssh-server
+  588  clear 
+  589  sudo service ssh status
+  590  sssh localhost
+  591  sudo apt update
+  592  sudo apt install guile-ssh
+  593  sudo service ssh status 
+  594  ssh localhost
+  595  clear 
+  596  sudo gedit /etc/ssh/sshd_config
+  597  sudo apt update
+  598  sudo apt install gedit -y
+  599  sudo gedit /etc/ssh/sshd_config
+  600  sudo nano /etc/ssh/sshd_config
+  601  sudo systemctl status ssh
+  602  sudo systemctl start ssh
+  603  sudo systemctl enable ssh
+  604  ip a
+  605  sudo systemctl status ssh
+  606  sudo ss -tlnp | grep 22
+  607  sudo ufw status
+  608  ip a
+  609  dpkg -l | grep openssh-server 
+  610  sudo systemctl status ssh
+  611  sudo ss -tlnp | grep :22
+  612  ip a 
+  613  hostname -I
+  614  sudo systemctl restart ssh
+  615  sudo systemctl status ssh
+  616  sudo ss -tlnp | grep :22
+  617  sudo apt reinstall openssh-server -y
+  618  sudo systemctl restart ssh
+  619  sudo lsof -i -P -n | grep ssh
+  620  hostname -I
+  621  sudo ss -tlnp | grep :22
+  622  sudo systemctl status ssh
+  623  npm start
+  624  cp desktop
+  625  cp Desktop
+  626  pwd
+  627  cd Desktop
+  628  cp a b
+  629  cp a/b
+  630  cp a/b/
+  631  cd ..
+  632  cd /
+  633  cd ~
+  634  ls
+  635  echo high 
+  636  chmod 0755 myfile.sh
+  637  read NM 
+  638  .a
+  639  sudo apt update 
+  640  sudo apt locate rpm
+  641  sudo locate rpm
+  642  locate rpm
+  643  grep file.txt
+  644  vi
+  645  cd Desktop
+  646  vi dir3
+  647  vim dir3 
+  648  chmod dir3
+  649  help
+  650  cd 
+  651  sudo apt update 
+  652  journalctl -b
+  653  sudo apt install ngix
+  654  locate package ngix
+  655  sudo apt install ngix
+  656  systemctl status ngix
+  657  sudo apt update 
+  658  sudo apt install nginx -y
+  659  setting up nginx
+  660  nginx -v
+  661  sudo systemctl start ngix
+  662  sudo systemctl start nginx
+  663  sudo systemctl enable nginx
+  664  systemctl status nginx
+  665  http://localhost
+  666  top
+  667  sudo apt install htop -y
+  668  htop
+  669  free -h
+  670  dh -h
+  671  [200~Monitoring and Security: Gain skills in monitoring system performance and  implementing basic security practices (e.g., user management, permissions). 
+  672  sudo apt install debhelper
+  673  du -sh ~/Downloads 
+  674  systemctl list-units --type=service --state=running
+  675  sudo ss -tulpn
+  676  /var/log 
+  677  whoami
+  678  cat /etc/passwd
+  679  cd Desktop
+  680  mkdir ~/Internship_Project
+  681  history
+  682  mkdir -p ~/INternship/Linux/notes
+  683  history > ~/Internship/linux-admin/notes/terminal-history.txt
+  684  history > ~/Internship/linux/notes/terminal-history.txt
+  685  mkdir -p ~/Internship/linux/notes
+  686  history > ~/Internship/linux/notes/terminal-history.txt
+  687  ls ~/Internship/linux/notes
+  688  nano ~/Internship/Linux/notes/terminal-history.txt
+  689  git config --list
+  690  cd ~/Desktop/Internship
+  691  git init
+  692  nano .gitignore
+  693  git add .
+  694  git commit -m "Initial Internship structure setup"
+  695  git remote add origin https://github.com/99Jeferson/Internship-program.git
+  696  git remote -v
+  697  git branch -M main
+  698  git push -u origin main
+  699  sudo apt update
+  700  sudo install gh -y
+  701  apt install gh -y
+  702  sudo apt install gh -y
+  703  git  auth login
+  704  sudo apt update
+  705  sudo apt install gh -y
+  706  gh auth login
+  707  cd
+  708  history > ~/Desktop/Internship/linux/notes/terminal-history.txt
+  709  ls
+  710  gh auth status
+  711  cd ~/Desktop/Internship
+  712  git push -u origin main
+  713  [200~mkdir -p web-development/{html-css,javascript,typescript,react,tailwind,api-integration,projects,notes}~
+  714  mkdir -p web-development/{html-css,javascript,typescript,react,tailwind,api-integration,projects,notes}
+  715  ls web-development
+  716  cd web-development/projects
+  717  mkdir profile-page
+  718  touch index.html styles.css script.js
+  719  cd ~/Desktop/Internship/web-development/projects/profile-page code.
+  720  cd profile-page code.
+  721  profile-page
+  722  cd
+  723  cd ~/Desktop/Internship/web-development/projects/profile-page
+  724* 
+  725  cd ~/Desktop/Internship/web-development/projects/profile-page
+  726  history >> ~/Desktop/Internship/linux/notes/terminal-history.txt
