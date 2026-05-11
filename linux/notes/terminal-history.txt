@@ -684,3 +684,25 @@
   684  history > ~/Internship/linux/notes/terminal-history.txt
   685  mkdir -p ~/Internship/linux/notes
   686  history > ~/Internship/linux/notes/terminal-history.txt
+  687  ls ~/Internship/linux/notes
+  688  nano ~/Internship/Linux/notes/terminal-history.txt
+  689  git config --list
+  690  cd ~/Desktop/Internship
+  691  git init
+  692  nano .gitignore
+  693  git add .
+  694  git commit -m "Initial Internship structure setup"
+  695  git remote add origin https://github.com/99Jeferson/Internship-program.git
+  696  git remote -v
+  697  git branch -M main
+  698  git push -u origin main
+  699  sudo apt update
+  700  sudo install gh -y
+  701  apt install gh -y
+  702  sudo apt install gh -y
+  703  git  auth login
+  704  sudo apt update
+  705  sudo apt install gh -y
+  706  gh auth login
+  707  cd
+  708  history > ~/Desktop/Internship/linux/notes/terminal-history.txt
