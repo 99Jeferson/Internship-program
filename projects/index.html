@@ -2,33 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Profile Page</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
+<body>
+
 <div class="container">
 
   <h1 id="title">My Developer Profile</h1>
 
-  <p id="intro">I am Jefesron Clinton Odong, a passionate web developer. Learning new technologies</p>
+  <p id="intro">
+    I am Jeferson Clinton Odong, a passionate web developer learning new technologies.
+  </p>
 
-  <button id="btn">Click to greet me</button>
+  <!-- Greeting Button -->
+  <button id="greetBtn">Click to greet me</button>
 
   <p id="message"></p>
 
   <hr>
 
+  <!-- Counter App -->
   <h3>Mini Counter App</h3>
 
   <h2 id="count">0</h2>
 
-  <button id="increase">+</button>
-  <button id="decrease">-</button>
+  <button id="increaseBtn">+</button>
+  <button id="decreaseBtn">-</button>
+
+  <hr>
+
+  <!-- Dark Mode -->
+  <h3>Dark Mode Toggle</h3>
+
+  <button id="themeBtn">Toggle Theme</button>
+
+  <hr>
+
+  <!-- Live Preview -->
+  <h3>Live Text Preview</h3>
+
+  <input
+    type="text"
+    id="textInput"
+    placeholder="Type something..."
+  >
+
+  <p id="preview"></p>
 
 </div>
-<h3>Dark Mode Toggle </h3>
-<button id="themeBtn">Toggle Theme</button>
 
-<hr>
-<h3>Live Text Preview</h3>
-<input type="text" id="textInput" placeholder="Type something...">
-<p id="preview"></p>
+<script src="script.js"></script>
+
+</body>
+</html>
