@@ -13,7 +13,7 @@ addBtn.addEventListener("click", function () {
         return;
     }
 
-    // CREATE LI
+    // CREATE TASK ITEM
     const li = document.createElement("li");
 
     // TASK TEXT
@@ -33,7 +33,7 @@ addBtn.addEventListener("click", function () {
         li.remove();
     });
 
-    // APPEND ELEMENTS
+    // APPEND ITEMS
     li.appendChild(span);
     li.appendChild(deleteBtn);
 
