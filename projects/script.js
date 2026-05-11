@@ -20,8 +20,10 @@ increaseBtn.addEventListener("click", function () {
 });
 
 decreaseBtn.addEventListener("click", function () {
-    count--;
-    countDisplay.textContent = count;
+    if (count > 0) {
+        count--;
+        countDisplay.textContent = count;
+    }
 });
 
 
