@@ -8,7 +8,7 @@ function App() {
       <h1>My First React App</h1>
 
       <p>
-        I am learning ReactJS during my internship.
+        Learning React is fun and rewarding. It allows you to build interactive user interfaces with ease. With React, you can create reusable components that make your code more efficient and maintainable.
       </p>
 
       <Welcome />
