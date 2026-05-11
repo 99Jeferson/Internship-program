@@ -1,5 +1,5 @@
 function Welcome() {
-  return <h2>Welcome to React Development 🚀</h2>;
+  return <h2>Welcome to React Development </h2>;
 }
 
 function App() {
