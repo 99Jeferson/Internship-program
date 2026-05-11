@@ -26,3 +26,17 @@ decreaseBtn.addEventListener("click", function () {
     count--;
     countDisplay.textContent = count;
 });
+// DARK MODE
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+});
+
+// Live Text Preview
+const textInput = document.getElementById("textInput");
+const preview = document.getElementById("preview");
+
+textInput.addEventListener("input", function () {
+    preview.textContent = textInput.value;
+});

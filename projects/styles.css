@@ -36,3 +36,12 @@ hr {
 button {
   margin: 5px;
 }
+.dark -mode {
+    background: #121212;
+    color: white;
+}
+
+.dark -mode .container {
+    background: #1e1e1e;
+    color: white;
+}
