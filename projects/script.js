@@ -1,21 +1,18 @@
-const button = document.getElementById("btn");
+// Greeting Feature
+const greetBtn = document.getElementById("greetBtn");
 const message = document.getElementById("message");
-const title = document.getElementById("title");
 
-// Greeting feature
-button.addEventListener("click", function () {
-    message.textContent = "Hello! Welcome to your developer journey 🚀";
-    message.style.color = "green";
-    title.textContent = "You are now interacting with the DOM!";
+greetBtn.addEventListener("click", function () {
+    message.textContent = "Welcome to my web development journey!";
 });
 
 
-// Counter feature
-let count = 0;
-
+// Counter App
+const increaseBtn = document.getElementById("increaseBtn");
+const decreaseBtn = document.getElementById("decreaseBtn");
 const countDisplay = document.getElementById("count");
-const increaseBtn = document.getElementById("increase");
-const decreaseBtn = document.getElementById("decrease");
+
+let count = 0;
 
 increaseBtn.addEventListener("click", function () {
     count++;
@@ -26,12 +23,15 @@ decreaseBtn.addEventListener("click", function () {
     count--;
     countDisplay.textContent = count;
 });
-// DARK MODE
+
+
+// Dark Mode
 const themeBtn = document.getElementById("themeBtn");
 
 themeBtn.addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
 });
+
 
 // Live Text Preview
 const textInput = document.getElementById("textInput");
