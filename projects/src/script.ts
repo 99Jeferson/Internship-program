@@ -1,123 +1,133 @@
+// ===== TYPES & INTERFACES =====
+
+interface FormElements {
+  form: HTMLFormElement
+  nameInput: HTMLInputElement
+  emailInput: HTMLInputElement
+  messageInput: HTMLTextAreaElement
+}
+
+interface CarouselElements {
+  slides: NodeListOf<HTMLElement>
+  dots: NodeListOf<HTMLElement>
+  prevBtn: HTMLButtonElement
+  nextBtn: HTMLButtonElement
+}
+
+// ===== HELPER: safely select elements =====
+// This function selects an element and throws a clear error if not found
+const selectElement = <T extends HTMLElement>(selector: string): T => {
+  const element = document.querySelector<T>(selector)
+  if (!element) throw new Error(`Element not found: ${selector}`)
+  return element
+}
+
 // ===== FORM VALIDATION =====
-const contactForm = document.querySelector(".contact-form")
-const nameInput = document.querySelector("#name")
-const emailInput = document.querySelector("#email")
-const messageInput = document.querySelector("#message")
 
-const showError = (input, message) => {
-    // Remove any existing error first under an input 
-    const existingError = input.parentElement.querySelector(".error-msg")
-    if (existingError) existingError.remove()
-
-    // Create and insert the error message
-    const error = document.createElement("span")
-    error.className = "error-msg"
-    error.textContent = message
-    error.style.color = "#ff4d4d"
-    error.style.fontSize = "0.8em"
-    input.parentElement.appendChild(error)
-    input.style.borderColor = "#ff4d4d"
+const formElements: FormElements = {
+  form: selectElement<HTMLFormElement>(".contact-form"),
+  nameInput: selectElement<HTMLInputElement>("#name"),
+  emailInput: selectElement<HTMLInputElement>("#email"),
+  messageInput: selectElement<HTMLTextAreaElement>("#message")
 }
 
-// ===== IMAGE CAROUSEL =====
+const showError = (input: HTMLElement, message: string): void => {
+  const existingError = input.parentElement?.querySelector(".error-msg")
+  if (existingError) existingError.remove()
 
-const slides = document.querySelectorAll(".carousel-slide")
-const dots = document.querySelectorAll(".dot")
-const prevBtn = document.querySelector(".prev-btn")
-const nextBtn = document.querySelector(".next-btn")
+  const error = document.createElement("span")
+  error.className = "error-msg"
+  error.textContent = message
+  error.style.color = "#ff4d4d"
+  error.style.fontSize = "0.8rem"
+  input.parentElement?.appendChild(error)
+  ;(input as HTMLInputElement).style.borderColor = "#ff4d4d"
+}
 
-let currentIndex = 0   // tracks which slide is showing
+const clearError = (input: HTMLElement): void => {
+  const existingError = input.parentElement?.querySelector(".error-msg")
+  if (existingError) existingError.remove()
+  ;(input as HTMLInputElement).style.borderColor = ""
+}
 
-// Core function — shows a specific slide by index number
-const goToSlide = (index) => {
-  // Remove active from whatever is currently active
-  slides[currentIndex].classList.remove("active")
-  dots[currentIndex].classList.remove("active")
+const isValidEmail = (email: string): boolean => {
+  return email.includes("@") && email.includes(".")
+}
 
-  // Update currentIndex — handle wrapping at the ends
+formElements.form.addEventListener("submit", (event: Event): void => {
+  event.preventDefault()
+  let isValid: boolean = true
+
+  if (formElements.nameInput.value.trim() === "") {
+    showError(formElements.nameInput, "Please enter your full name")
+    isValid = false
+  } else {
+    clearError(formElements.nameInput)
+  }
+
+  if (formElements.emailInput.value.trim() === "") {
+    showError(formElements.emailInput, "Please enter your email address")
+    isValid = false
+  } else if (!isValidEmail(formElements.emailInput.value)) {
+    showError(formElements.emailInput, "Please enter a valid email address")
+    isValid = false
+  } else {
+    clearError(formElements.emailInput)
+  }
+
+  if (formElements.messageInput.value.trim().length < 10) {
+    showError(formElements.messageInput, "Message must be at least 10 characters")
+    isValid = false
+  } else {
+    clearError(formElements.messageInput)
+  }
+
+  if (isValid) {
+    alert("Message sent! I will get back to you soon.")
+    formElements.form.reset()
+  }
+})
+
+// ===== CAROUSEL =====
+
+const carouselElements: CarouselElements = {
+  slides: document.querySelectorAll<HTMLElement>(".carousel-slide"),
+  dots: document.querySelectorAll<HTMLElement>(".dot"),
+  prevBtn: selectElement<HTMLButtonElement>(".prev-btn"),
+  nextBtn: selectElement<HTMLButtonElement>(".next-btn")
+}
+
+let currentIndex: number = 0
+
+const goToSlide = (index: number): void => {
+  carouselElements.slides[currentIndex].classList.remove("active")
+  carouselElements.dots[currentIndex].classList.remove("active")
+
   currentIndex = index
+  if (currentIndex >= carouselElements.slides.length) currentIndex = 0
+  if (currentIndex < 0) currentIndex = carouselElements.slides.length - 1
 
-  if (currentIndex >= slides.length) currentIndex = 0  // went past last → go to first
-  if (currentIndex < 0) currentIndex = slides.length - 1  // went before first → go to last
-
-  // Add active to the new slide
-  slides[currentIndex].classList.add("active")
-  dots[currentIndex].classList.add("active")
+  carouselElements.slides[currentIndex].classList.add("active")
+  carouselElements.dots[currentIndex].classList.add("active")
 }
 
-// Next button → move forward one slide
-nextBtn.addEventListener("click", () => {
+carouselElements.nextBtn.addEventListener("click", (): void => {
   goToSlide(currentIndex + 1)
 })
 
-// Prev button → move back one slide
-prevBtn.addEventListener("click", () => {
+carouselElements.prevBtn.addEventListener("click", (): void => {
   goToSlide(currentIndex - 1)
 })
 
-// Clicking a dot → jump directly to that slide
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
+carouselElements.dots.forEach((dot: HTMLElement, index: number): void => {
+  dot.addEventListener("click", (): void => {
     goToSlide(index)
   })
 })
 
-// Auto-play — moves to next slide every 4 seconds automatically
-let autoPlay = setInterval(() => {
+let autoPlay: ReturnType<typeof setInterval> = setInterval((): void => {
   goToSlide(currentIndex + 1)
 }, 4000)
 
-// Pause auto-play when user interacts with buttons
-prevBtn.addEventListener("click", () => clearInterval(autoPlay))
-nextBtn.addEventListener("click", () => clearInterval(autoPlay))
-
-
-//Helper function - clears errors from an input 
-const clearError = (input) => {
-    const existingError = input.parentElement.querySelector(".error-msg")
-    if (existingError) existingError.remove();
-    input.style.borderColor = ""
-}
-
-// Validate email format using s simple check
-const isValidEmail = (email) => {
-    return email.includes("@") && email.includes(".")
-}
-
-//Run validation when form is submitted
-contactForm.addEventListener("submit", (event) => {
-    event.preventDefault() // Prevent form from submitting
-    let isValid = true
-
-    // Check name
-    if (nameInput.value.trim() === "") {
-        showError(nameInput, "Please enter your full name")
-        isValid = false
-    }else {
-        clearError(nameInput)
-    }
-
-    // Check email
-    if (emailInput.value.trim() === "") {
-        showError(emailInput, "Please enter your email address")
-        isValid = false
-    } else if (!isValidEmail(emailInput.value)) {
-        showError(emailInput, "Please enter a valid email address")
-        isValid = false
-    } else {
-        clearError(emailInput)
-    }
-    //check message
-    if (messageInput.value.trim().length < 10) {
-        showError(messageInput, "Message must be at least 10 characters long")
-        isValid = false
-    } else {
-        clearError(messageInput)
-    }
-
-    //If everything passed
-    if (isValid) {
-        alert("Message sent successfully! I will get back to you soon.")
-        contactForm.reset() // Clear the form
-    }
-})  
+carouselElements.prevBtn.addEventListener("click", (): void => clearInterval(autoPlay))
+carouselElements.nextBtn.addEventListener("click", (): void => clearInterval(autoPlay))
