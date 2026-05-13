@@ -1,17 +1,25 @@
-function Welcome() {
-  return <h2>Welcome to React Development </h2>;
-}
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <div>
-      <h1>My First React App</h1>
+      <h1>React Counter App</h1>
 
-      <p>
-        Learning React is fun and rewarding. It allows you to build interactive user interfaces with ease. With React, you can create reusable components that make your code more efficient and maintainable.
-      </p>
+      <h2>{count}</h2>
 
-      <Welcome />
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+
+      <button onClick={() => setCount(count - 1)}>
+        Decrease
+      </button>
+
+      <button onClick={() => setCount(0)}>
+        Reset
+      </button>
     </div>
   );
 }
