@@ -22,7 +22,7 @@ const showError = (input, message) => {
 //Helper function - clears errors from an input 
 const clearError = (input) => {
     const existingError = input.parentElement.querySelector(".error-msg")
-    if (existingError) existingError.remove();
+    if (existingError) existingError.remove()
     input.style.borderColor = ""
 }
 
