@@ -295,3 +295,111 @@ footer {
     text-align: center;
 }
 }
+
+/* ===== CAROUSEL ===== */
+.carousel {
+  padding: var(--space-lg) var(--space-md);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+border-radius: var(--radius);
+border: 1px solid var(--color-border);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  padding: 4rem 3rem; 
+  background-color: var(--color-surface);
+  display: none;  
+}
+
+.carousel-slide.active {
+  display: block;
+} 
+
+.slide-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slide-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  opacity: 0.3;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.slide-content h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.slide-content p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Prev & Next Buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-bg);  
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+.carousel-btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.prev-btn {left: 1px;}
+.next-btn {right: 1px;}
+
+/* Dot indicators */  
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 1.2rem 0;  
+  background-color: var(--color-surface);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.dot.active {
+  background-color: var(--color-primary);
+  transform: scale(1.3);
+}
