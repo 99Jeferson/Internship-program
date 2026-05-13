@@ -193,3 +193,54 @@ nav {
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
 }
+
+/* ===== CONTACT ===== */
+#contact {
+  padding: var(--space-lg) var(--space-md);
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-intro {
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.contact-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-muted);
+}
+
+input, 
+textarea {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  outline: none; 
+  border-color: var(--color-primary);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.contact-form .btn {
+  width: 100%;
+  text-align: center;
+}
