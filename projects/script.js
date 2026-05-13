@@ -19,10 +19,63 @@ const showError = (input, message) => {
     input.style.borderColor = "#ff4d4d"
 }
 
+// ===== IMAGE CAROUSEL =====
+
+const slides = document.querySelectorAll(".carousel-slide")
+const dots = document.querySelectorAll(".dot")
+const prevBtn = document.querySelector(".prev-btn")
+const nextBtn = document.querySelector(".next-btn")
+
+let currentIndex = 0   // tracks which slide is showing
+
+// Core function — shows a specific slide by index number
+const goToSlide = (index) => {
+  // Remove active from whatever is currently active
+  slides[currentIndex].classList.remove("active")
+  dots[currentIndex].classList.remove("active")
+
+  // Update currentIndex — handle wrapping at the ends
+  currentIndex = index
+
+  if (currentIndex >= slides.length) currentIndex = 0  // went past last → go to first
+  if (currentIndex < 0) currentIndex = slides.length - 1  // went before first → go to last
+
+  // Add active to the new slide
+  slides[currentIndex].classList.add("active")
+  dots[currentIndex].classList.add("active")
+}
+
+// Next button → move forward one slide
+nextBtn.addEventListener("click", () => {
+  goToSlide(currentIndex + 1)
+})
+
+// Prev button → move back one slide
+prevBtn.addEventListener("click", () => {
+  goToSlide(currentIndex - 1)
+})
+
+// Clicking a dot → jump directly to that slide
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    goToSlide(index)
+  })
+})
+
+// Auto-play — moves to next slide every 4 seconds automatically
+let autoPlay = setInterval(() => {
+  goToSlide(currentIndex + 1)
+}, 4000)
+
+// Pause auto-play when user interacts with buttons
+prevBtn.addEventListener("click", () => clearInterval(autoPlay))
+nextBtn.addEventListener("click", () => clearInterval(autoPlay))
+
+
 //Helper function - clears errors from an input 
 const clearError = (input) => {
     const existingError = input.parentElement.querySelector(".error-msg")
-    if (existingError) existingError.remove()
+    if (existingError) existingError.remove();
     input.style.borderColor = ""
 }
 
