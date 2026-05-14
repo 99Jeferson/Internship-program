@@ -5,14 +5,12 @@ import TaskList from "./components/TaskList"
 import "./App.css"
 
 function App() {
-  const [tasks, setTasks] = useState([])
   const [filter, setFilter] = useState("all")  // "all" | "active" | "completed"
 
-  // Load tasks from localStorage when app starts
-  useEffect(() => {
-    const saved = localStorage.getItem("tasks")
-    if (saved) setTasks(JSON.parse(saved))
-  }, [])
+const [tasks, setTasks] = useState(() => {
+  const saved = localStorage.getItem("tasks")
+  return saved ? JSON.parse(saved) : []
+})
 
   // Save tasks to localStorage whenever they change
   useEffect(() => {
