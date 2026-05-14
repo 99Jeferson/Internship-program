@@ -1,30 +1,54 @@
-import { useState } from "react";
+import { useState } from 'react'
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
+import AddIcon from '@mui/icons-material/Add'
 
-function TaskInput({ onAdd}) {
-  const [inputValue, setInputValue] = useState("")
+function TaskInput({ onAdd }) {
+  const [inputValue, setInputValue] = useState('')
+  const [error, setError] = useState('')
 
   const handleAdd = () => {
-    if (inputValue.trim() === "") return
-    onAdd(inputValue.trim()) 
-    setInputValue("");
+    if (inputValue.trim() === '') {
+      setError('Please enter a task')
+      return
+    }
+    if (inputValue.trim().length < 3) {
+      setError('Task must be at least 3 characters')
+      return
+    }
+    setError('')
+    onAdd(inputValue.trim())
+    setInputValue('')
   }
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") handleAdd()
-    }
-
-    return (
-        <div className="task-wrapper">
-            <input
-                type="text"
-                placeholder="Add a new task..."
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyDown={handleKeyDown}
-            />
-            <button className="btn" onClick={handleAdd}>Add</button>
-        </div>
-    )
+  return (
+    <Box display="flex" gap={1.5} mb={2} alignItems="flex-start">
+      <TextField
+        fullWidth
+        variant="outlined"
+        placeholder="Add a new task and press Enter..."
+        value={inputValue}
+        onChange={(e) => {
+          setInputValue(e.target.value)
+          if (error) setError('')
+        }}
+        onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
+        error={!!error}
+        helperText={error}
+        size="small"
+        sx={{ bgcolor: 'background.paper', borderRadius: 1 }}
+      />
+      <Button
+        variant="contained"
+        onClick={handleAdd}
+        startIcon={<AddIcon />}
+        sx={{ height: 40, whiteSpace: 'nowrap', flexShrink: 0 }}
+      >
+        Add
+      </Button>
+    </Box>
+  )
 }
 
 export default TaskInput
