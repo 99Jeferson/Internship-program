@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import Header from "./components/Header"
 import TaskInput from "./components/TaskInput"
 import TaskList from "./components/TaskList"
-import "./App.css"
 
 function App() {
   const [filter, setFilter] = useState("all")  // "all" | "active" | "completed"
