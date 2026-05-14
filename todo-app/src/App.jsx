@@ -1,76 +1,87 @@
-import { useState, useEffect } from "react"
-import Header from "./components/Header"
-import TaskInput from "./components/TaskInput"
-import TaskList from "./components/TaskList"
+import { useState, useEffect } from 'react'
+import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import Divider from '@mui/material/Divider'
+import Header from './components/Header'
+import TaskInput from './components/TaskInput'
+import TaskList from './components/TaskList'
 
 function App() {
-  const [filter, setFilter] = useState("all")  // "all" | "active" | "completed"
+  const [tasks, setTasks] = useState(() => {
+    try {
+      const saved = localStorage.getItem('tasks')
+      return saved ? JSON.parse(saved) : []
+    } catch {
+      return []
+    }
+  })
 
-const [tasks, setTasks] = useState(() => {
-  const saved = localStorage.getItem("tasks")
-  return saved ? JSON.parse(saved) : []
-})
+  const [filter, setFilter] = useState('all')
 
-  // Save tasks to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks))
+    localStorage.setItem('tasks', JSON.stringify(tasks))
   }, [tasks])
 
-  // Add a new task
   const addTask = (title) => {
-    const newTask = {
-      id: Date.now(),       // unique id using timestamp
+    setTasks((prev) => [...prev, {
+      id: Date.now(),
       title,
-      completed: false
-    }
-    setTasks([...tasks, newTask])  // spread old tasks, add new one
+      completed: false,
+      createdAt: new Date().toLocaleDateString()
+    }])
   }
 
-  // Toggle completed status
   const toggleTask = (id) => {
-    setTasks(tasks.map((task) =>
-      task.id === id ? { ...task, completed: !task.completed } : task
-    ))
+    setTasks((prev) =>
+      prev.map((t) => t.id === id ? { ...t, completed: !t.completed } : t)
+    )
   }
 
-  // Delete a task
   const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id))
+    setTasks((prev) => prev.filter((t) => t.id !== id))
   }
 
-  // Edit a task title
   const editTask = (id, newTitle) => {
-    setTasks(tasks.map((task) =>
-      task.id === id ? { ...task, title: newTitle } : task
-    ))
+    setTasks((prev) =>
+      prev.map((t) => t.id === id ? { ...t, title: newTitle } : t)
+    )
   }
 
-  // Filter tasks based on current filter
-  const filteredTasks = tasks.filter((task) => {
-    if (filter === "active") return !task.completed
-    if (filter === "completed") return task.completed
-    return true  // "all"
+  const clearCompleted = () => {
+    setTasks((prev) => prev.filter((t) => !t.completed))
+  }
+
+  const filteredTasks = tasks.filter((t) => {
+    if (filter === 'active') return !t.completed
+    if (filter === 'completed') return t.completed
+    return true
   })
 
   const completedCount = tasks.filter((t) => t.completed).length
+  const remainingCount = tasks.length - completedCount
 
   return (
-    <div className="app">
+    <Container maxWidth="sm" sx={{ py: 5 }}>
       <Header total={tasks.length} completed={completedCount} />
 
       <TaskInput onAdd={addTask} />
 
-      <div className="filters">
-        {["all", "active", "completed"].map((f) => (
-          <button
+      {/* Filter buttons */}
+      <Box display="flex" gap={1} mb={2}>
+        {['all', 'active', 'completed'].map((f) => (
+          <Button
             key={f}
-            className={`filter-btn ${filter === f ? "active" : ""}`}
+            variant={filter === f ? 'contained' : 'outlined'}
+            size="small"
             onClick={() => setFilter(f)}
+            sx={{ borderRadius: 5, textTransform: 'capitalize' }}
           >
-            {f.charAt(0).toUpperCase() + f.slice(1)}
-          </button>
+            {f}
+          </Button>
         ))}
-      </div>
+      </Box>
 
       <TaskList
         tasks={filteredTasks}
@@ -79,12 +90,28 @@ const [tasks, setTasks] = useState(() => {
         onEdit={editTask}
       />
 
+      {/* Footer */}
       {tasks.length > 0 && (
-        <p className="summary">
-          {tasks.length - completedCount} task{tasks.length - completedCount !== 1 ? "s" : ""} remaining
-        </p>
+        <>
+          <Divider sx={{ mt: 3, mb: 2 }} />
+          <Box display="flex" justifyContent="space-between" alignItems="center">
+            <Typography variant="caption" color="text.secondary">
+              {remainingCount} task{remainingCount !== 1 ? 's' : ''} remaining
+            </Typography>
+            {completedCount > 0 && (
+              <Button
+                size="small"
+                color="error"
+                onClick={clearCompleted}
+                sx={{ textTransform: 'none', fontSize: '0.75rem' }}
+              >
+                Clear completed
+              </Button>
+            )}
+          </Box>
+        </>
       )}
-    </div>
+    </Container>
   )
 }
 
