@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import TaskItem from ',/TaskItem'
+import TaskItem from "./TaskItem" 
 
 
 function TaskList({ tasks, onToggle, onDelete, onEdit }) {
