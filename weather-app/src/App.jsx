@@ -1,121 +1,96 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import axios from 'axios'
+import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import CircularProgress from '@mui/material/CircularProgress'
+import SearchBar from './components/SearchBar'
+import WeatherCard from './components/WeatherCard'
+import ErrorMessage from './components/ErrorMessage'
+
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY
+const API_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [weatherData, setWeatherData] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const [lastCity, setLastCity] = useState('')
+
+  const fetchWeather = async (city) => {
+    setLoading(true)
+    setError(null)
+    setWeatherData(null)
+    setLastCity(city)
+
+    try {
+      // Axios makes the HTTP request and parses JSON automatically
+      const response = await axios.get(API_URL, {
+        params: {
+          q: city,
+          appid: API_KEY,
+          units: 'metric'   // gives us Celsius directly
+        }
+      })
+
+      setWeatherData(response.data)
+
+    } catch (err) {
+      // Axios puts HTTP errors inside err.response
+      if (err.response) {
+        if (err.response.status === 404) {
+          setError(`City "${city}" not found. Check the spelling and try again.`)
+        } else if (err.response.status === 401) {
+          setError('Invalid API key. Check your .env file.')
+        } else {
+          setError(`Something went wrong (${err.response.status}). Try again.`)
+        }
+      } else {
+        setError('Network error. Check your internet connection.')
+      }
+    } finally {
+      setLoading(false)  // always runs whether success or error
+    }
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Container maxWidth="sm" sx={{ py: 6 }}>
+      {/* Header */}
+      <Box textAlign="center" mb={5}>
+        <Typography variant="h3" fontWeight={800} color="primary" gutterBottom>
+          🌤 Weather App
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Search any city in the world for live weather data
+        </Typography>
+      </Box>
 
-      <div className="ticks"></div>
+      {/* Search */}
+      <SearchBar onSearch={fetchWeather} loading={loading} />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* Loading spinner */}
+      {loading && (
+        <Box display="flex" justifyContent="center" py={6}>
+          <CircularProgress color="primary" />
+        </Box>
+      )}
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      {/* Error */}
+      {error && !loading && <ErrorMessage message={error} />}
+
+      {/* Weather result */}
+      {weatherData && !loading && <WeatherCard data={weatherData} />}
+
+      {/* Empty state */}
+      {!weatherData && !loading && !error && (
+        <Box textAlign="center" py={8} color="text.secondary">
+          <Typography fontSize="3rem" mb={2}>🌍</Typography>
+          <Typography variant="body2">
+            Search for a city above to see its current weather
+          </Typography>
+        </Box>
+      )}
+    </Container>
   )
 }
 
