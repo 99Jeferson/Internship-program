@@ -8,7 +8,7 @@ import SearchBar from './components/SearchBar'
 import WeatherCard from './components/WeatherCard'
 import ErrorMessage from './components/ErrorMessage'
 
-const API_KEY = import.meta.env.VITE_WEATHER_API_KEY
+const API_KEY = process.env.WEATHER_API_KEY
 const API_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
 function App() {
