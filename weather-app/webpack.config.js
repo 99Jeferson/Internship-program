@@ -74,15 +74,12 @@ export default {
   plugins: [
     // Generate index.html with script tags injected
     new HtmlWebpackPlugin({
-      template: './index.html',
-      favicon: './public/vite.svg',
-      minify: !isDev && {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-      }
+        template: './index.html',
+        minify: !isDev && {
+            removeComments: true,
+            collapsWhitespace: true,
+            removeRedundantAttributes: true,
+        }
     }),
 
     // Extract CSS into separate .css files (production only)
