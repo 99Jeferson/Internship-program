@@ -46,3 +46,4 @@ export default function SearchBar({ onSearch, loading }) {
     </Box>
   )
 }
+
