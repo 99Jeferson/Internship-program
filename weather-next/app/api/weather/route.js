@@ -10,7 +10,7 @@ export async function GET(request) {
       { status: 400 }
     )
   }
-
+  
   const apiKey = process.env.WEATHER_API_KEY
 
   try {
